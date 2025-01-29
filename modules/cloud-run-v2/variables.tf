@@ -98,6 +98,12 @@ variable "encryption_key" {
   default     = null
 }
 
+variable "session_affinity" {
+  description = "Session affinity configuration for Cloud Run service."
+  type        = bool
+  default     = null
+}
+
 variable "eventarc_triggers" {
   description = "Event arc triggers for different sources."
   type = object({
