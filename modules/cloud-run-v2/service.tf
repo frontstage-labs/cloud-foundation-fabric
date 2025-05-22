@@ -33,7 +33,7 @@ resource "google_cloud_run_v2_service" "service" {
       ? "EXECUTION_ENVIRONMENT_GEN2" : "EXECUTION_ENVIRONMENT_GEN1"
     )
     max_instance_request_concurrency = var.revision.max_concurrency
-    session_affinity = var.session_affinity
+    session_affinity                 = var.session_affinity
     dynamic "scaling" {
       for_each = (var.revision.max_instance_count == null && var.revision.min_instance_count == null) ? [] : [""]
       content {
